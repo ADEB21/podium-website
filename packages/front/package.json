@@ -1,0 +1,30 @@
+{
+  "name": "@aromatic/front",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev --port 3000",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.6.0",
+    "@astrojs/react": "^3.3.4",
+    "@astrojs/sitemap": "^3.1.4",
+    "@sanity/asset-utils": "^1.3.0",
+    "@sanity/client": "^6.18.1",
+    "@sanity/image-url": "^1.0.2",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.3.0",
+    "astro": "^4.8.3",
+    "lenis": "^1.0.45",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "sass": "^1.77.1"
+  }
+}

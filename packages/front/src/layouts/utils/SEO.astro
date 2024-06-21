@@ -1,0 +1,31 @@
+---
+import defaultOgImage from "@/assets/images/og/indexDefault.jpg"
+
+const { title, lang, description, ogTitle, ogDescription, ogImage} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <!-- OpenGraph -->
+    <meta property="og:title" content={ogTitle ? ogTitle : title} />
+    <meta property="og:description" content={ogDescription ? ogDescription : description} />
+    <meta property="og:image" content={ogImage ? ogImage : defaultOgImage.src}/>
+    <meta property="og:url" content={Astro.url} />
+    <!-- Meta Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content={ogTitle ? ogTitle : title} />
+    <meta property="twitter:description" content={ogDescription ? ogDescription : description} />
+    <meta property="twitter:image" content={ogImage ? ogImage : defaultOgImage.src}
+    />
+    <!-- PWA -->
+    <meta name="theme-color" content=`#DB4027` />
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/x-icon" href=`/favicons/favicon.svg`>
+  </head>
+  <slot/>
+</html>

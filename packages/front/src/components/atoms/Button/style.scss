@@ -1,0 +1,46 @@
+.bi-podium-stroke {
+  border-radius: 30px;
+  padding: 12px 20px;
+  width: fit-content;
+  border: 1px solid white;
+  background-color: transparent;
+  transition: background-color 300ms ease-in-out;
+  cursor: pointer;
+  p {
+    font-size: 14px;
+    line-height: 14px;
+    color: white;
+    transition: color 300ms ease-in-out;
+    font-family: ClashGrotesk-Semibold;
+  }
+  &:hover {
+    background-color: white;
+    p {
+      color: black;
+    }
+  }
+}
+
+.bi-podium-filled {
+  border-radius: 30px;
+  padding: 12px 20px;
+  width: fit-content;
+  border: none;
+  background-color: transparent;
+  transition: background-color 300ms ease-in-out;
+  background-color: #09550b;
+  cursor: pointer;
+  p {
+    font-size: 14px;
+    line-height: 14px;
+    color: white;
+    transition: color 300ms ease-in-out;
+    font-family: ClashGrotesk-Semibold;
+  }
+  &:hover {
+    background-color: white;
+    p {
+      color: black;
+    }
+  }
+}

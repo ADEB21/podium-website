@@ -1,0 +1,100 @@
+// Lenis
+html.lenis {
+  height: auto;
+}
+
+#bi-modals > .wrapper-content.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+// Reset
+body,
+html {
+  width: 100%;
+  background-color: map-get($surface, "surface-invert-tertiary");
+}
+
+// Typography settings
+
+h1,
+h2,
+h3,
+h4,
+.bi-mid-heading {
+  font-family: "ClashGrotesk-Regular";
+  @include responsive-font(
+    map-get($heading-fonts-sizes-desktop, "Mid"),
+    map-get($heading-fonts-sizes-desktop, "Mid-line"),
+    map-get($breakpoints, "desktop")
+  );
+  color: map-get($text, "text-primary");
+  @include mq("tablet", max) {
+    @include responsive-font(
+      map-get($heading-fonts-sizes-mobile, "Mid"),
+      map-get($heading-fonts-sizes-mobile, "Mid-line"),
+      map-get($breakpoints, "phone-small")
+    );
+  }
+}
+
+p,
+.bi-mid-body {
+  font-family: "ClashGrotesk-Regular";
+  @include responsive-font(
+    map-get($body-fonts-sizes-desktop, "Mid"),
+    map-get($body-fonts-sizes-desktop, "Mid-line"),
+    map-get($breakpoints, "desktop")
+  );
+  color: map-get($text, "text-primary");
+  @include mq("tablet", max) {
+    @include responsive-font(
+      map-get($body-fonts-sizes-mobile, "Mid"),
+      map-get($body-fonts-sizes-mobile, "Mid-line"),
+      map-get($breakpoints, "phone-small")
+    );
+  }
+}
+
+.bi-bolded {
+  font-family: "ClashGrotesk-SemiBold";
+  &::after{
+    content: ".";
+    color: #FE191B;
+  }
+}
+
+button,
+input,
+a,
+.bi-small-body {
+  font-family: "ClashGrotesk-SemiBold";
+  @include responsive-font(
+    map-get($body-fonts-sizes-desktop, "Small"),
+    map-get($body-fonts-sizes-desktop, "Small-line"),
+    map-get($breakpoints, "desktop")
+  );
+  color: map-get($text, "text-primary");
+  @include mq("tablet", max) {
+    @include responsive-font(
+      map-get($body-fonts-sizes-mobile, "Small"),
+      map-get($body-fonts-sizes-mobile, "Small-line"),
+      map-get($breakpoints, "phone-small")
+    );
+  }
+}

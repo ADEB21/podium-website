@@ -1,0 +1,155 @@
+//Colors
+$colors: (
+  "50": #f3f2f3,
+  "100": #cfc9cf,
+  "200": #9f939f,
+  "400": #353135,
+  "600": #0d0c0d,
+  "brand-1": #2b321c,
+  "brand-2": #6b7648,
+  "brand-3": #a9b481,
+  "brand-4": #e1d3bf,
+  "brand-5": #f5f4f5,
+);
+
+//Spacing
+$spacing: (
+  "0": 1px,
+  "1": 4px,
+  "2": 8px,
+  "3": 12px,
+  "4": 16px,
+  "5": 24px,
+  "6": 32px,
+  "7": 40px,
+  "8": 52px,
+  "9": 60px,
+  "10": 80px,
+  "11": 96px,
+  "12": 104px,
+  "13": 120px,
+  "14": 160px,
+  "15": 200px,
+);
+
+$radius: (
+  "radius-s": 4px,
+  "radius-m": 8px,
+  "radius-l": 16px,
+  "radius-xl": 24px,
+);
+
+$heading-fonts-sizes-desktop: (
+  "XLarge": 60px,
+  "XLarge-line": 136px,
+  "Large": 64px,
+  "Large-line": 80px,
+  "Mid": 60px,
+  "Mid-line": 74px,
+  "Small": 20px,
+  "Small-line": 24px,
+);
+
+$body-fonts-sizes-desktop: (
+  "Mid": 16px,
+  "Mid-line": 32px,
+  "Small": 14px,
+  "Small-line": 14px,
+);
+
+$heading-fonts-sizes-mobile: (
+  "XLarge": 56px,
+  "XLarge-line": 72px,
+  "Large": 44px,
+  "Large-line": 56px,
+  "Mid": 36px,
+  "Mid-line": 48px,
+  "Small": 24px,
+  "Small-line": 32px,
+);
+
+$body-fonts-sizes-mobile: (
+  "Mid": 16px,
+  "Mid-line": 20px,
+  "Small": 12px,
+  "Small-line": 16px,
+);
+
+$text: (
+  "text-primary": map-get($colors, "600"),
+  "text-secondary": map-get($colors, "200"),
+  "text-tertiary": map-get($colors, "100"),
+  "text-invert": map-get($colors, "50"),
+);
+
+$surface: (
+  /** Normal **/ "surface-primary": map-get($colors, "brand-1"),
+  "surface-secondary": map-get($colors, "brand-2"),
+  "surface-tertiary": map-get($colors, "brand-3"),
+  "surface-quartenary": map-get($colors, "brand-4"),
+  /** Invert **/ "surface-invert-primary": #fbfafc,
+  "surface-invert-secondary": #f4f3f8,
+  "surface-invert-tertiary": #eeedf2,
+  "surface-invert-quartenary": #e9eaec,
+  /** Other **/ "surface-disabled": map-get($colors, "200"),
+  "surface-invert": map-get($colors, "600")
+);
+
+$border: (
+  "border-primary": map-get($colors, "600"),
+  "border-secondary": map-get($colors, "200"),
+  "border-tertiary": map-get($colors, "50"),
+  "border-quartenary": map-get($colors, "brand-2"),
+);
+
+$space-desktop: (
+  "spacing-none": 0px,
+  "spacing-2xs": map-get($spacing, "1"),
+  "spacing-xs": map-get($spacing, "3"),
+  "spacing-sm": map-get($spacing, "4"),
+  "spacing-mid": map-get($spacing, "5"),
+  "spacing-lg": map-get($spacing, "6"),
+  "spacing-xl": map-get($spacing, "7"),
+  "spacing-2xl": map-get($spacing, "9"),
+  "spacing-hg": map-get($spacing, "10"),
+  "spacing-xh": map-get($spacing, "12"),
+  "spacing-2xh": map-get($spacing, "15"),
+);
+$space-mobile: (
+  "spacing-none": 0px,
+  "spacing-2xs": map-get($spacing, "1"),
+  "spacing-xs": map-get($spacing, "3"),
+  "spacing-sm": map-get($spacing, "4"),
+  "spacing-mid": map-get($spacing, "5"),
+  "spacing-lg": map-get($spacing, "6"),
+  "spacing-xl": map-get($spacing, "7"),
+  "spacing-2xl": map-get($spacing, "8"),
+  "spacing-hg": map-get($spacing, "10"),
+  "spacing-xh": map-get($spacing, "10"),
+  "spacing-2xh": map-get($spacing, "10"),
+);
+
+// Z-Indexes
+$z-indexes: ("content", "menu", "header", "modal", "loader");
+
+//Layout
+$layout-desktop: (
+  "margin": 40px,
+  "column-spacing": 20px,
+  "column-number": 12,
+);
+$layout-mobile: (
+  "margin": 16px,
+  "column-spacing": 8px,
+  "column-number": 8,
+);
+
+//Breakpoints
+$breakpoints: (
+  "phone-small": 320px,
+  "tablet": 768px,
+  "tablet-wide": 1024px,
+  "desktop": 1440px,
+  "desktop-wide": 1920px,
+  "desktop-wide-xl": 2560px,
+);

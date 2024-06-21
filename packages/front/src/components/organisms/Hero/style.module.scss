@@ -1,0 +1,27 @@
+.heroIndex {
+  @include grid(
+    map-get($layout-desktop, column-number),
+    map-get($layout-desktop, column-spacing),
+    map-get($layout-desktop, margin)
+  );
+  height: 80dvh;
+  &__wrapper {
+    grid-column: 1/13;
+    height: inherit;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    grid-template-columns: subgrid;
+    picture {
+      grid-column: 1/13;
+    }
+    h1 {
+      position: absolute;
+      bottom: 64px;
+      grid-column: 2/8;
+      color: white;
+    }
+  }
+}

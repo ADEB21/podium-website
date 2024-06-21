@@ -1,0 +1,72 @@
+{
+  "mixinMq": {
+    "prefix": "includemq",
+    "body": [
+      "@include mq(${1|\"phone-small\",\"tablet\",\"tablet-wide\",\"desktop\",\"desktop-wide\"|}, ${2|max,min|}) {",
+      " ${0}",
+      "}"
+    ],
+    "scope": "scss"
+  },
+
+  "mixinGrid": {
+    "prefix": "includegrid",
+    "body": [
+      "@include grid(",
+      "  map-get(${1|$layout-desktop,$layout-mobile|}, column-number),",
+      "  map-get(${2|$layout-desktop,$layout-mobile|}, column-spacing),",
+      "  map-get(${3|$layout-desktop,$layout-mobile|}, margin)",
+      ");"
+    ],
+    "scope": "scss"
+  },
+
+  "fontFace": {
+	"prefix": "fontface",
+	"body": [
+	  "@font-face {",
+	  "    font-family: \"\";",
+	  "    src: url(\"\");",
+	  "    font-weight: normal;",
+	  "    font-style: normal;",
+	  "    font-display: block;",
+	  "}"
+	],
+  "scope": "scss"
+  },
+
+
+  "Map-get Spacing Desktop": {
+    "prefix": "mapgetDesktopSpacing",
+    "description": "spacing-none: 0px,\nspacing-2xs: 4px,\nspacing-xs: 12px,\nspacing-sm: 16px,\nspacing-mid: 24px,\nspacing-lg: 32px,\nspacing-xl: 40px,\nspacing-2xl: 60px,\nspacing-hg: 80px,\nspacing-xh: 104px,\nspacing-2xh: 200px,\n",
+    "body": [
+      "map-get(${1|$space-desktop|}, ${2|\"spacing-none\",\"spacing-2xs\",\"spacing-xs\",\"spacing-sm\",\"spacing-mid\",\"spacing-lg\",\"spacing-xl\",\"spacing-2xl\",\"spacing-hg\",\"spacing-xh\",\"spacing-2xh\"|})"
+    ]
+  },
+
+  "Map-get Spacing Mobile": {
+    "prefix": "mapgetMobileSpacing",
+    "description": "spacing-none: 0px,\nspacing-2xs: 4px,\nspacing-xs: 12px,\nspacing-sm: 16px,\nspacing-mid: 24px,\nspacing-lg: 32px,\nspacing-xl: 40px,\nspacing-2xl: 52px,\nspacing-hg: 80px,\n",
+    "body": [
+      "map-get(${1|$space-mobile|}, ${2|\"spacing-none\",\"spacing-2xs\",\"spacing-xs\",\"spacing-sm\",\"spacing-mid\",\"spacing-lg\",\"spacing-xl\",\"spacing-2xl\",\"spacing-hg\"|})"
+    ]
+  },
+
+  "Map-get Text": {
+    "prefix": "mapgetText",
+    "description": "text-primary: map-get($colors, \"900\"),\ntext-secondary: map-get($colors, \"400\"),\ntext-tertiary: map-get($colors, \"200\"),\ntext-invert: map-get($colors, \"50\"),\n",
+    "body": [
+      "map-get(${1|$text|}, ${2|\"text-primary\",\"text-secondary\",\"text-tertiary\",\"text-invert\"|} )"
+    ]
+    
+  },
+
+  "Map-get Surface": {
+    "prefix": "mapgetSurface",
+    "description": "surface-primary: map-get($colors, \"50\"),\nsurface-secondary: map-get($colors, \"brand-1\"),\nsurface-tertiary: map-get($colors, \"brand-3\"),\nsurface-quartenary: map-get($colors, \"brand-5\"),\nsurface-quinary: map-get($colors, \"brand-7\"),\nsurface-invert-primary: map-get($colors, \"brand-2\"),\nsurface-invert-secondary: map-get($colors, \"brand-4\"),\nsurface-invert-tertiary: map-get($colors, \"brand-6\"),\nsurface-invert-quartenary: map-get($colors, \"brand-8\"),\nsurface-disabled: map-get($colors, \"100\"),\n",
+    "body": [
+      "map-get(${1|$surface|}, ${2|\"surface-primary\",\"surface-secondary\",\"surface-tertiary\",\"surface-quartenary\",\"surface-quinary\",\"surface-invert-primary\",\"surface-invert-secondary\",\"surface-invert-tertiary\",\"surface-invert-quartenary\",\"surface-disabled\"|} )"
+    ]
+    
+  }
+}

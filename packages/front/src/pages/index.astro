@@ -1,0 +1,139 @@
+---
+import { client } from "@/assets/scripts/utils/api/sanityClient";
+import SEO from "@/layouts/utils/SEO.astro";
+import Layout from "../layouts/Layout.astro";
+import Hero from "@/components/organisms/Hero";
+
+import Button from "@/components/atoms/Button";
+import Picture from "@/components/atoms/Picture";
+
+import HeroDesktopBase from "@/assets/images/index/hero/desktop-base.jpg";
+import HeroDesktopBaseWebp from "@/assets/images/index/hero/desktop-base.webp";
+import HeroDesktopRetina from "@/assets/images/index/hero/desktop-retina.jpg";
+import HeroDesktopRetinaWebp from "@/assets/images/index/hero/desktop-retina.webp";
+import HeroMobileBase from "@/assets/images/index/hero/mobile-base.jpg";
+import HeroMobileBaseWebp from "@/assets/images/index/hero/mobile-base.webp";
+import HeroMobileRetina from "@/assets/images/index/hero/mobile-retina.jpg";
+import HeroMobileRetinaWebp from "@/assets/images/index/hero/mobile-retina.webp";
+import HeroDesktopLazy from "@/assets/images/index/hero/desktop-lazy.jpg";
+import HeroMobileLazy from "@/assets/images/index/hero/mobile-lazy.jpg";
+
+import Section01DesktopBase from "@/assets/images/index/section01/desktop-base.jpg";
+import Section01DesktopBaseWebp from "@/assets/images/index/section01/desktop-base.webp";
+import Section01DesktopRetina from "@/assets/images/index/section01/desktop-retina.jpg";
+import Section01DesktopRetinaWebp from "@/assets/images/index/section01/desktop-retina.webp";
+import Section01MobileBase from "@/assets/images/index/section01/mobile-base.jpg";
+import Section01MobileBaseWebp from "@/assets/images/index/section01/mobile-base.webp";
+import Section01MobileRetina from "@/assets/images/index/section01/mobile-retina.jpg";
+import Section01MobileRetinaWebp from "@/assets/images/index/section01/mobile-retina.webp";
+import Section01DesktopLazy from "@/assets/images/index/section01/desktop-lazy.jpg";
+import Section01MobileLazy from "@/assets/images/index/section01/mobile-lazy.jpg";
+
+const heroImage = {
+  desktop: {
+    jpeg: [HeroDesktopBase.src, HeroDesktopRetina.src],
+    webp: [HeroDesktopBaseWebp.src, HeroDesktopRetinaWebp.src],
+  },
+  mobile: {
+    jpeg: [HeroMobileBase.src, HeroMobileRetina.src],
+    webp: [HeroMobileBaseWebp.src, HeroMobileRetinaWebp.src],
+  },
+  lazy: {
+    desktop: HeroDesktopLazy.src,
+    mobile: HeroMobileLazy.src,
+  },
+};
+
+const section01Image = {
+  desktop: {
+    jpeg: [Section01DesktopBase.src, Section01DesktopRetina.src],
+    webp: [Section01DesktopBaseWebp.src, Section01DesktopRetinaWebp.src],
+  },
+  mobile: {
+    jpeg: [Section01MobileBase.src, Section01MobileRetina.src],
+    webp: [Section01MobileBaseWebp.src, Section01MobileRetinaWebp.src],
+  },
+  lazy: {
+    desktop: Section01DesktopLazy.src,
+    mobile: Section01MobileLazy.src,
+  },
+};
+
+// const data = await client.fetch(
+//   `*[_type == "home" && !(_id in path("drafts.**"))][0]`
+// );
+---
+
+<SEO
+  title="Podium - Accueil"
+  lang="fr"
+  description="Conjuguer “savoir-faire” et “savoir-vivre” dans une ambiance décontractée et chaleureuse, tel est l’ambition de l'Aromatic notre restaurant situé au coeur..."
+  ogImage={null}
+>
+  <Layout>
+    <Hero
+      title="Vous aussi communiquez comme des champions."
+      type="index"
+      images={heroImage}
+      client:load
+    />
+    <section class="bi-contentPicture">
+      <div class="bi-contentPicture-txt">
+        <h2>Découvrez notre <span class="bi-bolded">agence</span></h2>
+        <p>
+          Vous avez beaucoup à nous apprendre sur votre marché et votre offre.
+          Des infos précieuses qui méritent toute notre attention : parce qu’une
+          solution digitale, ça se construit ensemble. C’est pour cela qu’un
+          projet ne démarre jamais sans un vrai kick-off et que nous avons
+          développés des méthodologies de co-construction. Vous impliquer dans
+          chaque étape du projet, c’est vous en donner une maîtrise.
+        </p>
+        <Button type="filled">Nous contacter</Button>
+      </div>
+      <div class="bi-contentPicture-picture">
+        <Picture
+          alt={"image hero"}
+          widthDesktop={210}
+          heightDesktop={238}
+          widthMobile={210}
+          heightMobile={238}
+          images={section01Image}
+          isLazy={false}
+          isParallax={false}
+          client:load
+        />
+      </div>
+    </section>
+    <div style="height:2000px"></div>
+  </Layout>
+</SEO>
+
+<style lang="scss">
+  .bi-contentPicture {
+    @include grid(
+      map-get($layout-desktop, column-number),
+      map-get($layout-desktop, column-spacing),
+      map-get($layout-desktop, margin)
+    );
+    margin-top: 92px;
+    .bi-contentPicture-txt {
+      grid-column: 2 / 8;
+      display: flex;
+      flex-direction: column;
+      h2 {
+        margin-bottom: 40px;
+        width: 60%;
+      }
+      p {
+        margin-bottom: 32px;
+      }
+    }
+    .bi-contentPicture-picture {
+      grid-column: 9 / 12;
+    }
+  }
+</style>
+
+<!-- <script define:vars={{ data }}>
+  console.log(data);
+</script> -->

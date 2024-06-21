@@ -1,0 +1,79 @@
+.dishItem {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / 12;
+  margin-bottom: 24px;
+  & > div {
+    grid-column: 1 / 12;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & > p:nth-child(1) {
+      max-width: 80%;
+    }
+    & > p:nth-child(2) {
+      position: relative;
+      button {
+        padding: 2px;
+        position: absolute;
+        top: -50%;
+        background-color: map-get($surface, "surface-primary");
+        color: map-get($text, "text-invert");
+        width: 24px;
+        height: auto;
+        border-radius: 18px;
+      }
+      .info {
+        width: max-content;
+        background-color: map-get($surface, "surface-primary");
+        color: map-get($text, "text-invert");
+        position: absolute;
+        top: -300%;
+        right: -9%;
+        padding: 24px;
+      }
+    }
+  }
+  & > p {
+    grid-column: 1 / 10;
+    margin-top: 8px;
+  }
+  @include mq("tablet", max) {
+    grid-column: 1 / 9;
+    margin-bottom: 16px;
+    & > div {
+      grid-column: 1 / 9;
+      & > p:nth-child(1) {
+        max-width: 70%;
+      }
+      & > p:nth-child(2) {
+        font-size: 12px;
+        line-height: 16px;
+        button {
+          padding: 1px;
+          position: absolute;
+          top: -100%;
+          left: 90%;
+          background-color: map-get($surface, "surface-primary");
+          color: map-get($text, "text-invert");
+          width: 18px;
+          height: auto;
+          border-radius: 10px;
+        }
+        .info {
+          width: max-content;
+          background-color: map-get($surface, "surface-primary");
+          color: map-get($text, "text-invert");
+          position: absolute;
+          top: -300%;
+          right: -9%;
+          padding: 24px;
+        }
+      }
+    }
+    & > p {
+      grid-column: 1 / 9;
+      max-width: 70%;
+    }
+  }
+}

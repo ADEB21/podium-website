@@ -1,0 +1,20 @@
+{
+  "name": "aromatic-restaurant",
+  "version": "2.0.0",
+  "description": "MonoRepo of the Aromatic Restaurant",
+  "main": "index.js",
+  "workspaces": [
+    "packages/front",
+    "packages/sanity"
+  ],
+  "scripts": {
+    "dev": "pnpm -r run dev",
+    "build": "pnpm -r run build",
+    "build:front": "pnpm --dir packages/front build",
+    "build:sanity": "pnpm --dir packages/sanity build",
+    "clean": "rm -rf node_modules && cd packages/front && rm -rf node_modules &&rm -rf dist && cd ../../packages/sanity && rm -rf node_modules &&rm -rf dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

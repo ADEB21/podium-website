@@ -1,0 +1,25 @@
+---
+import { client } from "@/assets/scripts/utils/api/sanityClient";
+import SEO from "@/layouts/utils/SEO.astro";
+import Layout from "../layouts/Layout.astro";
+
+// const data = await client.fetch(
+//   `*[_type == "home" && !(_id in path("drafts.**"))][0]`
+// );
+---
+
+<SEO
+  title="Podium - Projets"
+  lang="fr"
+  description="Conjuguer “savoir-faire” et “savoir-vivre” dans une ambiance décontractée et chaleureuse, tel est l’ambition de l'Aromatic notre restaurant situé au coeur .."
+  ogImage={null}
+>
+  <Layout>
+    <>
+    </>
+  </Layout>
+</SEO>
+
+<!-- <script define:vars={{ data }}>
+  console.log(data);
+</script> -->

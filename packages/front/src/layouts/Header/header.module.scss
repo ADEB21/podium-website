@@ -1,0 +1,233 @@
+.header {
+  padding: 16px 0px;
+  width: 100%;
+  @include grid(
+    map-get($layout-desktop, column-number),
+    map-get($layout-desktop, column-spacing),
+    map-get($layout-desktop, margin)
+  );
+  align-items: center;
+  top: 0;
+  transition: top 600ms cubic-bezier(0.7, 0, 0.3, 1);
+  position: fixed;
+  z-index: 10;
+  background-color: transparent;
+  &.hidden {
+    top: -100px;
+  }
+
+  a {
+    grid-column: 2 / 5;
+  }
+  a[target] {
+    grid-column: -3;
+  }
+  nav {
+    grid-column: 5 / 8;
+    ul {
+      display: flex;
+      gap: 32px;
+      li {
+        a {
+          font-weight: 800;
+          p {
+            color: white;
+          }
+        }
+        &.active {
+          &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: white;
+          }
+        }
+        &:not(.active) {
+          &::after {
+            content: "";
+            display: block;
+            background-color: white;
+            width: 100%;
+            height: 1px;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 300ms cubic-bezier(0.43, 0.03, 0.62, 1);
+          }
+          &:hover {
+            &::after {
+              transition: transform 400ms cubic-bezier(0.45, 0, 0.3, 1);
+              transform-origin: left;
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include mq("tablet", max) {
+    display: none;
+  }
+}
+
+.header__mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 0px;
+  z-index: 100;
+  background-color: map-get($surface, "surface-invert-tertiary");
+  @include grid(
+    map-get($layout-mobile, column-number),
+    map-get($layout-mobile, column-spacing),
+    map-get($layout-mobile, margin)
+  );
+  align-items: center;
+  a {
+    grid-column: 1 / 4;
+    width: 100px;
+    height: 30px;
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+  button {
+    grid-column: 9 / 9;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    svg {
+      width: 100%;
+      height: auto;
+      path {
+        fill: map-get($surface, "surface-primary");
+        transform-origin: center;
+        transition:
+          transform 300ms ease-in-out,
+          opacity 300ms 300ms ease-in;
+      }
+      path:nth-of-type(1) {
+        transform: rotate(0deg) translateY(0px);
+      }
+      path:nth-of-type(2) {
+        transform: translateX(0px);
+        opacity: 1;
+      }
+      path:nth-of-type(3) {
+        transform: rotate(0deg) translateY(0px);
+      }
+    }
+  }
+  #menu {
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    bottom: 100%;
+    display: none;
+  }
+  &.open {
+    transition: background-color 300ms ease-in-out;
+    background-color: map-get($surface, "surface-primary");
+    a {
+      svg {
+        path {
+          fill: map-get($surface, "surface-invert-primary");
+        }
+      }
+    }
+    button {
+      svg {
+        path {
+          transform-origin: center;
+          transition:
+            transform 300ms ease-in-out,
+            opacity 300ms ease-in;
+          fill: map-get($surface, "surface-invert-primary");
+        }
+        path:nth-of-type(1) {
+          transform: rotate(45deg) translateY(5px);
+        }
+        path:nth-of-type(2) {
+          transform: translateX(5px);
+          opacity: 0;
+        }
+        path:nth-of-type(3) {
+          transform: rotate(-45deg) translateY(-5px);
+        }
+      }
+    }
+
+    #menu {
+      display: block;
+      opacity: 1;
+      position: fixed;
+      top: 62px;
+      left: 0;
+      right: 0;
+      bottom: 100%;
+      background-color: map-get($surface, "surface-primary");
+      z-index: 100;
+      animation: menuOpen 600ms 100ms ease-in-out forwards;
+      overflow: hidden;
+      nav {
+        height: 100%;
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          padding-left: 16px;
+          padding-top: 40px;
+          li {
+            &:nth-last-child(1) {
+              a {
+                display: flex;
+                width: 24px;
+                height: 24px;
+              }
+            }
+            a {
+              color: map-get($text, "text-invert");
+            }
+          }
+          @for $i from 1 through 6 {
+            li:nth-of-type(#{$i}) {
+              transform: translateX(-100px);
+              opacity: 0.1;
+              animation: translateRight
+                1.2s
+                cubic-bezier(0.4, 0, 0.38, 0.98)
+                calc(50ms * $i)
+                forwards;
+            }
+
+            @keyframes translateRight {
+              0% {
+                transform: translateX(-100px);
+                opacity: 0.1;
+              }
+              100% {
+                transform: translateX(0px);
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @include mq("tablet", min) {
+    display: none;
+  }
+}
+
+@keyframes menuOpen {
+  0% {
+    bottom: 100%;
+  }
+  100% {
+    bottom: 0%;
+  }
+}
