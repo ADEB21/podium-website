@@ -13,7 +13,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { getImageDimensions } from "@sanity/asset-utils";
 // Get a pre-configured url-builder from your sanity client
 const builder = imageUrlBuilder({
-  dataset: import.meta.env.PUBLIC_SANITY_DATASET,
+  dataset: import.meta.env.PUBLIC_SANITY_STUDIO_DATASET,
   projectId: import.meta.env.PUBLIC_SANITY_PROJECT_ID,
 });
 
@@ -174,10 +174,7 @@ export const buildSanityImages = (
 
 export const urlFileBuilder = (id) => {
   let params = id.split("-");
-  let dataset =
-    import.meta.env.PUBLIC_MODE === "DEV"
-      ? import.meta.env.PUBLIC_SANITY_DATASET_DEV
-      : import.meta.env.PUBLIC_SANITY_DATASET_PROD;
+  let dataset = import.meta.env.PUBLIC_SANITY_STUDIO_DATASET;
   let projectId = import.meta.env.PUBLIC_SANITY_PROJECT_ID;
 
   return `https://cdn.sanity.io/files/${projectId}/${dataset}/${params[1]}.${params[2]}`;
