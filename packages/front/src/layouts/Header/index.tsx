@@ -7,9 +7,6 @@ import Button from "@/components/atoms/Button";
 
 const index = (props: { url: string }) => {
   const { url } = props;
-
-  console.log("props", url);
-
   const path = [
     {
       name: "Accueil",

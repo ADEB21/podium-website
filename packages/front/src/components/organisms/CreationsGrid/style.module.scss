@@ -1,0 +1,80 @@
+.creationsGrid {
+  padding-top: 92px;
+  padding-bottom: 184px;
+  margin: auto;
+  @include grid(
+    map-get($layout-desktop, column-number),
+    map-get($layout-desktop, column-spacing),
+    map-get($layout-desktop, margin)
+  );
+  justify-items: center;
+  h3 {
+    grid-column: 1/13;
+    text-align: center;
+    margin-bottom: 92px;
+  }
+  ul {
+    grid-column: 2 / 12;
+    height: 600px;
+    display: grid;
+    grid-template-columns: subgrid;
+    row-gap: 20px;
+    margin-bottom: 104px;
+    li {
+      background-color: lightgray;
+      border-radius: 24px;
+      height: 309px;
+      &:nth-child(1) {
+        grid-column: 1 / 5;
+      }
+      &:nth-child(2) {
+        grid-column: 5 / 9;
+      }
+      &:nth-child(3) {
+        grid-column: 9 / 12;
+      }
+      &:nth-child(4) {
+        grid-column: 1 / 4;
+      }
+      &:nth-child(5) {
+        grid-column: 4 / 7;
+      }
+      &:nth-child(6) {
+        grid-column: 7 / 12;
+      }
+    }
+  }
+  a {
+    grid-column: 1 /13;
+  }
+
+  @include mq("tablet", max) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    @include grid(
+      map-get($layout-mobile, column-number),
+      map-get($layout-mobile, column-spacing),
+      map-get($layout-mobile, margin)
+    );
+    h3 {
+      grid-column: 1/9;
+      margin-bottom: 40px;
+    }
+    ul {
+      grid-column: 1 / 9;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      margin-bottom: 52px;
+      li {
+        background-color: lightgray;
+        border-radius: 24px;
+        height: 309px;
+      }
+    }
+    a {
+      grid-column: 1 /9;
+    }
+  }
+}

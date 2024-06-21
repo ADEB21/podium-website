@@ -6,6 +6,7 @@ import Hero from "@/components/organisms/Hero";
 
 import Button from "@/components/atoms/Button";
 import Picture from "@/components/atoms/Picture";
+import CreationsGrid from "@/components/organisms/CreationsGrid";
 
 import HeroDesktopBase from "@/assets/images/index/hero/desktop-base.jpg";
 import HeroDesktopBaseWebp from "@/assets/images/index/hero/desktop-base.webp";
@@ -28,6 +29,61 @@ import Section01MobileRetina from "@/assets/images/index/section01/mobile-retina
 import Section01MobileRetinaWebp from "@/assets/images/index/section01/mobile-retina.webp";
 import Section01DesktopLazy from "@/assets/images/index/section01/desktop-lazy.jpg";
 import Section01MobileLazy from "@/assets/images/index/section01/mobile-lazy.jpg";
+
+import Section02DesktopBase from "@/assets/images/index/section02/desktop-base.jpg";
+import Section02DesktopBaseWebp from "@/assets/images/index/section02/desktop-base.webp";
+import Section02DesktopRetina from "@/assets/images/index/section02/desktop-retina.jpg";
+import Section02DesktopRetinaWebp from "@/assets/images/index/section02/desktop-retina.webp";
+import Section02MobileBase from "@/assets/images/index/section02/mobile-base.jpg";
+import Section02MobileBaseWebp from "@/assets/images/index/section02/mobile-base.webp";
+import Section02MobileRetina from "@/assets/images/index/section02/mobile-retina.jpg";
+import Section02MobileRetinaWebp from "@/assets/images/index/section02/mobile-retina.webp";
+import Section02DesktopLazy from "@/assets/images/index/section02/desktop-lazy.jpg";
+import Section02MobileLazy from "@/assets/images/index/section02/mobile-lazy.jpg";
+
+import Team01DesktopBase from "@/assets/images/index/team/desktop-01-base.jpg";
+import Team01DesktopBaseWebp from "@/assets/images/index/team/desktop-01-base.webp";
+import Team01DesktopRetina from "@/assets/images/index/team/desktop-01-retina.jpg";
+import Team01DesktopRetinaWebp from "@/assets/images/index/team/desktop-01-retina.webp";
+import Team01MobileBase from "@/assets/images/index/team/mobile-01-base.jpg";
+import Team01MobileBaseWebp from "@/assets/images/index/team/mobile-01-base.webp";
+import Team01MobileRetina from "@/assets/images/index/team/mobile-01-retina.jpg";
+import Team01MobileRetinaWebp from "@/assets/images/index/team/mobile-01-retina.webp";
+import Team01DesktopLazy from "@/assets/images/index/team/desktop-01-lazy.jpg";
+import Team01MobileLazy from "@/assets/images/index/team/mobile-01-lazy.jpg";
+
+import Team02DesktopBase from "@/assets/images/index/team/desktop-02-base.jpg";
+import Team02DesktopBaseWebp from "@/assets/images/index/team/desktop-02-base.webp";
+import Team02DesktopRetina from "@/assets/images/index/team/desktop-02-retina.jpg";
+import Team02DesktopRetinaWebp from "@/assets/images/index/team/desktop-02-retina.webp";
+import Team02MobileBase from "@/assets/images/index/team/mobile-02-base.jpg";
+import Team02MobileBaseWebp from "@/assets/images/index/team/mobile-02-base.webp";
+import Team02MobileRetina from "@/assets/images/index/team/mobile-02-retina.jpg";
+import Team02MobileRetinaWebp from "@/assets/images/index/team/mobile-02-retina.webp";
+import Team02DesktopLazy from "@/assets/images/index/team/desktop-02-lazy.jpg";
+import Team02MobileLazy from "@/assets/images/index/team/mobile-02-lazy.jpg";
+
+import Team03DesktopBase from "@/assets/images/index/team/desktop-03-base.jpg";
+import Team03DesktopBaseWebp from "@/assets/images/index/team/desktop-03-base.webp";
+import Team03DesktopRetina from "@/assets/images/index/team/desktop-03-retina.jpg";
+import Team03DesktopRetinaWebp from "@/assets/images/index/team/desktop-03-retina.webp";
+import Team03MobileBase from "@/assets/images/index/team/mobile-03-base.jpg";
+import Team03MobileBaseWebp from "@/assets/images/index/team/mobile-03-base.webp";
+import Team03MobileRetina from "@/assets/images/index/team/mobile-03-retina.jpg";
+import Team03MobileRetinaWebp from "@/assets/images/index/team/mobile-03-retina.webp";
+import Team03DesktopLazy from "@/assets/images/index/team/desktop-03-lazy.jpg";
+import Team03MobileLazy from "@/assets/images/index/team/mobile-03-lazy.jpg";
+
+import Team04DesktopBase from "@/assets/images/index/team/desktop-04-base.jpg";
+import Team04DesktopBaseWebp from "@/assets/images/index/team/desktop-04-base.webp";
+import Team04DesktopRetina from "@/assets/images/index/team/desktop-04-retina.jpg";
+import Team04DesktopRetinaWebp from "@/assets/images/index/team/desktop-04-retina.webp";
+import Team04MobileBase from "@/assets/images/index/team/mobile-04-base.jpg";
+import Team04MobileBaseWebp from "@/assets/images/index/team/mobile-04-base.webp";
+import Team04MobileRetina from "@/assets/images/index/team/mobile-04-retina.jpg";
+import Team04MobileRetinaWebp from "@/assets/images/index/team/mobile-04-retina.webp";
+import Team04DesktopLazy from "@/assets/images/index/team/desktop-04-lazy.jpg";
+import Team04MobileLazy from "@/assets/images/index/team/mobile-04-lazy.jpg";
 
 const heroImage = {
   desktop: {
@@ -59,9 +115,85 @@ const section01Image = {
   },
 };
 
-// const data = await client.fetch(
-//   `*[_type == "home" && !(_id in path("drafts.**"))][0]`
-// );
+const section02Image = {
+  desktop: {
+    jpeg: [Section02DesktopBase.src, Section02DesktopRetina.src],
+    webp: [Section02DesktopBaseWebp.src, Section02DesktopRetinaWebp.src],
+  },
+  mobile: {
+    jpeg: [Section02MobileBase.src, Section02MobileRetina.src],
+    webp: [Section02MobileBaseWebp.src, Section02MobileRetinaWebp.src],
+  },
+  lazy: {
+    desktop: Section02DesktopLazy.src,
+    mobile: Section02MobileLazy.src,
+  },
+};
+
+const team = [
+  {
+    desktop: {
+      jpeg: [Team01DesktopBase.src, Team01DesktopRetina.src],
+      webp: [Team01DesktopBaseWebp.src, Team01DesktopRetinaWebp.src],
+    },
+    mobile: {
+      jpeg: [Team01MobileBase.src, Team01MobileRetina.src],
+      webp: [Team01MobileBaseWebp.src, Team01MobileRetinaWebp.src],
+    },
+    lazy: {
+      desktop: Team01DesktopLazy.src,
+      mobile: Team01MobileLazy.src,
+    },
+  },
+  {
+    desktop: {
+      jpeg: [Team02DesktopBase.src, Team02DesktopRetina.src],
+      webp: [Team02DesktopBaseWebp.src, Team02DesktopRetinaWebp.src],
+    },
+    mobile: {
+      jpeg: [Team02MobileBase.src, Team02MobileRetina.src],
+      webp: [Team02MobileBaseWebp.src, Team02MobileRetinaWebp.src],
+    },
+    lazy: {
+      desktop: Team02DesktopLazy.src,
+      mobile: Team02MobileLazy.src,
+    },
+  },
+  {
+    desktop: {
+      jpeg: [Team03DesktopBase.src, Team03DesktopRetina.src],
+      webp: [Team03DesktopBaseWebp.src, Team03DesktopRetinaWebp.src],
+    },
+    mobile: {
+      jpeg: [Team03MobileBase.src, Team03MobileRetina.src],
+      webp: [Team03MobileBaseWebp.src, Team03MobileRetinaWebp.src],
+    },
+    lazy: {
+      desktop: Team03DesktopLazy.src,
+      mobile: Team03MobileLazy.src,
+    },
+  },
+  {
+    desktop: {
+      jpeg: [Team04DesktopBase.src, Team04DesktopRetina.src],
+      webp: [Team04DesktopBaseWebp.src, Team04DesktopRetinaWebp.src],
+    },
+    mobile: {
+      jpeg: [Team04MobileBase.src, Team04MobileRetina.src],
+      webp: [Team04MobileBaseWebp.src, Team04MobileRetinaWebp.src],
+    },
+    lazy: {
+      desktop: Team04DesktopLazy.src,
+      mobile: Team04MobileLazy.src,
+    },
+  },
+];
+
+const data = await client.fetch(
+  `*[_type == "projects" && !(_id in path("drafts.**"))][0]{
+    ProjectsArray[0...6]->
+  }`
+);
 ---
 
 <SEO
@@ -92,7 +224,7 @@ const section01Image = {
       </div>
       <div class="bi-contentPicture-picture">
         <Picture
-          alt={"image hero"}
+          alt={"hero"}
           widthDesktop={210}
           heightDesktop={238}
           widthMobile={210}
@@ -104,7 +236,139 @@ const section01Image = {
         />
       </div>
     </section>
-    <div style="height:2000px"></div>
+    <section class="bi-elevate">
+      <div>
+        <h3><span class="bi-bolded">Élever</span> votre communication</h3>
+        <p>
+          Vous avez beaucoup à nous apprendre sur votre marché et votre offre.
+          Des infos précieuses qui méritent toute notre attention : parce qu’une
+          solution digitale, ça se construit ensemble. C’est pour cela qu’un
+          projet ne démarre jamais sans un vrai kick-off et que nous avons
+          développés des méthodologies de co-construction. Vous impliquer dans
+          chaque étape du projet, c’est vous en donner une maîtrise.
+        </p>
+        <Button type="filled">Nos services</Button>
+      </div>
+    </section>
+    <CreationsGrid data={data} client:load />
+    <section class="bi-history">
+      <div class="bi-history-picture">
+        <Picture
+          alt={"Une histoire sportive"}
+          widthDesktop={210}
+          heightDesktop={238}
+          widthMobile={210}
+          heightMobile={238}
+          images={section02Image}
+          isLazy={false}
+          isParallax={false}
+          client:load
+        />
+      </div>
+      <div class="bi-history-txt">
+        <h3>Une histoire <span class="bi-bolded">sportive</span></h3>
+        <p>
+          Depuis notre création, nous nous consacrons à raconter les plus belles
+          histoires sportives, en capturant la passion et l'essence même du
+          sport, que ce soit à travers les exploits des athlètes, les moments
+          marquants des équipes ou les événements mémorables. Notre mission est
+          de sublimer le sport par une communication percutante. Nous mettons en
+          lumière les moments inoubliables et les exploits qui définissent
+          l’histoire du sport. <br /><br />
+
+          Nos services couvrent un large éventail de besoins en communication
+          sportive. Nous créons des campagnes publicitaires impactantes et des
+          stratégies de marketing continu qui engagent et inspirent. Nous gérons
+          les relations médias pour garantir une couverture optimale et
+          développons des maquettes de solutions digitales innovantes pour une
+          présence en ligne efficace. Nous organisons des événements médiatiques
+          spectaculaires et mettons en place des programmes de sponsoring et de
+          mécénat pour soutenir et valoriser les initiatives sportives. <br
+          /><br />
+
+          Pourquoi nous choisir ? Notre équipe est composée de professionnels
+          passionnés par le sport et la communication, alliant savoir-faire
+          technique et amour du sport. Nous utilisons les dernières technologies
+          et tendances pour créer des contenus innovants et mémorables. Chaque
+          projet est unique, et nous travaillons en étroite collaboration avec
+          nos clients pour comprendre leurs besoins et leur offrir des solutions
+          sur mesure. <br /><br />
+
+          Contactez-nous dès aujourd’hui pour donner vie à votre vision sportive
+          et pour écrire ensemble une nouvelle page de l’histoire sportive !
+        </p>
+        <Button type="filled">Prendre contact</Button>
+      </div>
+    </section>
+    <section class="bi-team">
+      <div>
+        <h3>Rencontrez<br />notre<span class="bi-bolded"> équipe</span></h3>
+        <p>
+          Vous avez beaucoup à nous apprendre sur votre marché et votre offre.
+          Des infos précieuses qui méritent toute notre attention : parce qu’une
+          solution digitale, ça se construit ensemble. C’est pour cela qu’un
+          projet ne démarre jamais sans un vrai kick-off et que nous avons
+          développés des méthodologies de co-construction. Vous impliquer dans
+          chaque étape du projet, c’est vous en donner une maîtrise.
+        </p>
+      </div>
+      <div class="bi-team-picture1">
+        <div>
+          <Picture
+            alt={"hero"}
+            widthDesktop={210}
+            heightDesktop={238}
+            widthMobile={210}
+            heightMobile={238}
+            images={team[0]}
+            isLazy={false}
+            isParallax={false}
+            client:load
+          />
+        </div>
+        <div>
+          <Picture
+            alt={"hero"}
+            widthDesktop={210}
+            heightDesktop={238}
+            widthMobile={210}
+            heightMobile={238}
+            images={team[1]}
+            isLazy={false}
+            isParallax={false}
+            client:load
+          />
+        </div>
+      </div>
+      <div class="bi-team-picture2">
+        <div>
+          <Picture
+            alt={"hero"}
+            widthDesktop={210}
+            heightDesktop={238}
+            widthMobile={210}
+            heightMobile={238}
+            images={team[2]}
+            isLazy={false}
+            isParallax={false}
+            client:load
+          />
+        </div>
+        <div>
+          <Picture
+            alt={"hero"}
+            widthDesktop={210}
+            heightDesktop={238}
+            widthMobile={210}
+            heightMobile={238}
+            images={team[3]}
+            isLazy={false}
+            isParallax={false}
+            client:load
+          />
+        </div>
+      </div>
+    </section>
   </Layout>
 </SEO>
 
@@ -116,6 +380,7 @@ const section01Image = {
       map-get($layout-desktop, margin)
     );
     margin-top: 92px;
+    margin-bottom: 136px;
     .bi-contentPicture-txt {
       grid-column: 2 / 8;
       display: flex;
@@ -130,10 +395,198 @@ const section01Image = {
     }
     .bi-contentPicture-picture {
       grid-column: 9 / 12;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+    @include mq("tablet", max) {
+      @include grid(
+        map-get($layout-mobile, column-number),
+        map-get($layout-mobile, column-spacing),
+        map-get($layout-mobile, margin)
+      );
+      margin-top: 40px;
+      margin-bottom: 80px;
+      .bi-contentPicture-txt {
+        grid-column: 1 / 9;
+        display: flex;
+        flex-direction: column;
+        h2 {
+          margin-bottom: 24px;
+          width: 100%;
+        }
+        p {
+          margin-bottom: 16px;
+        }
+      }
+      .bi-contentPicture-picture {
+        grid-column: 1 / 9;
+        border-radius: 24px;
+        margin-top: 40px;
+      }
+    }
+  }
+  .bi-elevate {
+    background-color: #1e1e1e;
+    h3,
+    p {
+      color: white;
+      text-align: center;
+    }
+    h3 {
+      margin-bottom: 40px;
+    }
+    p {
+      margin-bottom: 32px;
+    }
+    & > div {
+      display: flex;
+      flex-direction: column;
+      padding: 92px 0px;
+      max-width: 800px;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+    }
+    @include mq("tablet", max) {
+      h3 {
+        margin-bottom: 24px;
+      }
+      p {
+        margin-bottom: 16px;
+      }
+      & > div {
+        padding: 40px 16px;
+      }
+    }
+  }
+
+  .bi-history {
+    padding: 64px 0px;
+    @include grid(
+      map-get($layout-desktop, column-number),
+      map-get($layout-desktop, column-spacing),
+      map-get($layout-desktop, margin)
+    );
+    margin-bottom: 172px;
+    .bi-history-picture {
+      grid-column: 2 / 6;
+      background: lightgray;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+    .bi-history-txt {
+      grid-column: 7 / 12;
+      h3 {
+        margin-bottom: 40px;
+      }
+      p {
+        margin-bottom: 32px;
+      }
+    }
+    @include mq("tablet", max) {
+      padding: 32px 0px;
+      @include grid(
+        map-get($layout-mobile, column-number),
+        map-get($layout-mobile, column-spacing),
+        map-get($layout-mobile, margin)
+      );
+      margin-bottom: 80px;
+      .bi-history-picture {
+        grid-column: 1 / 9;
+        order: 2;
+      }
+      .bi-history-txt {
+        order: 1;
+        grid-column: 1 / 9;
+        margin-bottom: 52px;
+        h3 {
+          margin-bottom: 24px;
+        }
+        p {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+
+  .bi-team {
+    @include grid(
+      map-get($layout-desktop, column-number),
+      map-get($layout-desktop, column-spacing),
+      map-get($layout-desktop, margin)
+    );
+    align-items: center;
+    margin-bottom: 224px;
+    & > div {
+      grid-column: 2 / 7;
+      h3 {
+        margin-bottom: 40px;
+      }
+    }
+
+    .bi-team-picture1 {
+      grid-column: 8 / 10;
+      div {
+        background-color: lightgray;
+        width: 100%;
+        height: 380px;
+        &:nth-child(1) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .bi-team-picture2 {
+      grid-column: 10 / 12;
+      margin-top: 80px;
+      div {
+        background-color: lightgray;
+        width: 100%;
+        height: 380px;
+        &:nth-child(1) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    @include mq("tablet", max) {
+      @include grid(
+        map-get($layout-mobile, column-number),
+        map-get($layout-mobile, column-spacing),
+        map-get($layout-mobile, margin)
+      );
+      margin-bottom: 104px;
+      & > div {
+        grid-column: 1 / 9;
+        h3 {
+          margin-bottom: 32px;
+        }
+      }
+      .bi-team-picture1 {
+        display: flex;
+        grid-column: 1 / 9;
+        margin-top: 32px;
+        div {
+          height: 150px;
+          &:nth-child(1) {
+            margin-bottom: 0px;
+          }
+        }
+      }
+      .bi-team-picture2 {
+        display: flex;
+        grid-column: 1 / 9;
+        margin-top: 0px;
+        div {
+          width: 100%;
+          height: 150px;
+          &:nth-child(1) {
+            margin-bottom: 0px;
+          }
+        }
+      }
     }
   }
 </style>
 
-<!-- <script define:vars={{ data }}>
+<script define:vars={{ data }}>
   console.log(data);
-</script> -->
+</script>

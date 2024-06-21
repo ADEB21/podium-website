@@ -13,5 +13,5 @@ const { isHeader = true, isFooter = true } = Astro.props;
   <main>
     <slot />
   </main>
-  <!-- {isFooter && <Footer client:load />} -->
+  {isFooter && <Footer client:load />}
 </body>

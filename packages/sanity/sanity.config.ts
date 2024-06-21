@@ -33,13 +33,13 @@ export default defineConfig({
               .child(() =>
                 S.document()
                   .title('Projets')
-                  .documentId('e0692267-df39-44a8-83e6-ac568a094a52')
+                  .documentId('e0692267-df39-44a8-83e6-acs68a094a52')
                   .schemaType('projects')
                   .views([S.view.form()]),
               )
               .icon(HomeIcon),
             S.divider(),
-            // S.documentTypeListItem('product').title('Produits').icon(PackageIcon),
+            S.documentTypeListItem('project').title('Projets').icon(PackageIcon),
           ])
       },
     }

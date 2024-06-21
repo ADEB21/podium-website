@@ -1,204 +1,171 @@
 .footer {
-  &__socials {
-    @include grid(
-      map-get($layout-desktop, column-number),
-      map-get($layout-desktop, column-spacing),
-      map-get($layout-desktop, margin)
-    );
-    &__header {
-      grid-column: 1 / 13;
-      margin-bottom: 40px;
-      h3 {
-        margin-bottom: 8px;
-      }
-      a {
-        color: map-get($surface, "surface-disabled");
-      }
+  background-color: #131e14;
+  height: auto;
+  padding-top: 40px;
+  padding-bottom: 24px;
+  @include grid(
+    map-get($layout-desktop, column-number),
+    map-get($layout-desktop, column-spacing),
+    map-get($layout-desktop, margin)
+  );
+  &_header {
+    grid-column: 1 / 13;
+    padding: 40px 0px;
+    border-radius: 24px;
+    background-color: #fce01e;
+    height: auto;
+    display: grid;
+    grid-template-columns: subgrid;
+    margin-bottom: 60px;
+    h4 {
+      grid-column: 2 / 6;
     }
-    &__posts {
-      grid-column: 1 / 13;
-      &__list {
-        @include grid(
-          map-get($layout-desktop, column-number),
-          map-get($layout-desktop, column-spacing),
-          0
-        );
-        &__item {
-          grid-column: span 4;
-          picture {
-            width: 100%;
-            img {
-              width: 100%;
-              object-fit: cover;
-              aspect-ratio: 1 / 1;
-            }
-          }
+    &_right {
+      grid-column: 6 / 12;
+      display: grid;
+      grid-template-columns: subgrid;
+      & > div {
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-column: 1 / 7;
+        input {
+          padding-left: 24px;
+          grid-column: 1 / 5;
+          border: none;
+          border-radius: 8px;
         }
-        &__itemDisabled {
+        button {
+          transition: 300ms ease-in-out;
+          border-radius: 8px;
+          grid-column: 5 / 7;
+          background-color: #191919;
           display: flex;
           align-items: center;
           justify-content: center;
-          grid-column: 1 / 13;
-          height: 300px;
-          flex-direction: column;
+          gap: 8px;
+          cursor: pointer;
           p {
+            color: white;
+            transition: 300ms ease-in-out;
           }
-          a {
-            text-decoration: underline;
+          span {
+            line-height: 0;
+            svg {
+              path {
+                transition: 300ms ease-in-out;
+              }
+            }
+          }
+          &:hover {
+            background-color: white;
+            transition: 300ms ease-in-out;
+            p {
+              color: #191919;
+              transition: 300ms ease-in-out;
+            }
+            span {
+              svg {
+                path {
+                  fill: #191919;
+                  transition: 300ms ease-in-out;
+                }
+              }
+            }
           }
         }
       }
-    }
-  }
-  &__book {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 104px 0px;
-    cursor: pointer;
-    svg {
-      display: block;
-      .translated_mask {
-        translate: 0 100%;
-        transition: translate 1.2s cubic-bezier(0.7, 0, 0.3, 1);
-      }
-      &:hover {
-        .translated_mask {
-          translate: 0 0%;
-          transition: translate 1000ms cubic-bezier(0.7, 0, 0.3, 1);
-        }
-      }
-    }
-    a {
-      position: relative;
-      &::after {
-        content: "";
-        background-color: map-get($surface, "surface-primary");
-        position: absolute;
-        bottom: -10px;
-        display: block;
-        width: 100%;
-        height: 2px;
-      }
-    }
-  }
-
-  &__content {
-    padding: 80px 0px;
-    @include grid(
-      map-get($layout-desktop, column-number),
-      map-get($layout-desktop, column-spacing),
-      map-get($layout-desktop, margin)
-    );
-    background-color: map-get($surface, "surface-primary");
-    h3,
-    h4,
-    p,
-    span {
-      color: map-get($text, "text-invert");
-    }
-    &__col1 {
-      grid-column: 2/4;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      padding: 80px 0px;
-    }
-    &__col2 {
-      grid-column: 7/9;
-      text-align: end;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      padding: 80px 0px;
-      a {
-        cursor: pointer;
-      }
-    }
-    &__col3 {
-      grid-column: 10/13;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      padding: 80px 0px;
-    }
-    hr {
-      margin: 32px 0px;
-      grid-column: 2/12;
-      width: 100%;
-      height: 1px;
-      background-color: map-get($surface, "surface-invert-primary");
-    }
-    & > p:nth-of-type(1) {
-      grid-column: 2 / 6;
-    }
-    & > p:nth-of-type(2) {
-      a {
-        display: inline-block;
-      }
-      grid-column: 10 / 12;
-    }
-  }
-
-  @include mq("tablet", max) {
-    &__socials {
-      display: none;
-    }
-    &__book {
-      display: none;
-    }
-    &__content {
-      padding: 40px 0px;
-      @include grid(
-        map-get($layout-mobile, column-number),
-        map-get($layout-mobile, column-spacing),
-        map-get($layout-mobile, margin)
-      );
-      background-color: map-get($surface, "surface-primary");
-      h3,
-      h4,
       p {
-        color: map-get($text, "text-invert");
+        grid-column: 1 / 7;
+        color: #727373;
       }
-      &__col1 {
-        grid-column: 1/9;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        padding: 16px 0px;
+    }
+  }
+  &_mid {
+    grid-column: 1 / 13;
+    display: grid;
+    grid-template-columns: subgrid;
+    margin-bottom: 40px;
+    a {
+      grid-column: 1 / 3;
+    }
+    nav {
+      grid-column: 3 / 10;
+      display: grid;
+      grid-template-columns: subgrid;
+      ul {
+        h5 {
+          color: white;
+          margin-bottom: 8px;
+        }
+        &:nth-child(1) {
+          grid-column: 1 / 3;
+          li {
+            &:hover {
+              p {
+                color: white;
+              }
+            }
+          }
+        }
+        &:nth-child(2) {
+          grid-column: 3 / 6;
+        }
+        &:nth-child(3) {
+          grid-column: 6 / 9;
+          li {
+            &:hover {
+              p {
+                color: white;
+              }
+            }
+          }
+        }
+        li {
+          p {
+            color: #818181;
+          }
+        }
       }
-      &__col2 {
-        grid-column: 1/9;
-        text-align: start;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        padding: 16px 0px;
-      }
-      &__col3 {
-        grid-column: 1/9;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        padding: 16px 0px;
-      }
-      hr {
-        margin: 32px 0px;
-        grid-column: 1/9;
-        width: 100%;
-        height: 1px;
-        background-color: map-get($surface, "surface-invert-primary");
-      }
-      & > p:nth-of-type(1) {
-        grid-column: 1 / 9;
+    }
+    & > div {
+      text-align: end;
+      grid-column: -1 / -3;
+      h5 {
+        color: white;
         margin-bottom: 8px;
       }
-      & > p:nth-of-type(2) {
-        a {
-          display: inline-block;
+      ul {
+        display: flex;
+        justify-content: end;
+        gap: 4px;
+        li {
+          cursor: pointer;
+          svg {
+            path {
+              transition: fill 300ms ease-in-out;
+            }
+          }
+          &:hover {
+            svg {
+              path {
+                fill: #fe191b;
+              }
+            }
+          }
         }
-        grid-column: 1 / 9;
       }
+    }
+  }
+  &_bottom {
+    grid-column: 1 / 13;
+    display: flex;
+    justify-content: space-between;
+    & > div {
+      display: flex;
+      gap: 8px;
+    }
+    p {
+      color: #727373;
     }
   }
 }

@@ -27,7 +27,7 @@ html.lenis {
 body,
 html {
   width: 100%;
-  background-color: map-get($surface, "surface-invert-tertiary");
+  background-color: #FCFBFB;
 }
 
 // Typography settings
@@ -48,6 +48,35 @@ h4,
     @include responsive-font(
       map-get($heading-fonts-sizes-mobile, "Mid"),
       map-get($heading-fonts-sizes-mobile, "Mid-line"),
+      map-get($breakpoints, "phone-small")
+    );
+  }
+  &::after {
+    content: ".";
+    color: #fe191b;
+    font-family: "ClashGrotesk-SemiBold";
+  }
+  &.question{
+    &::after {
+      content: "?";
+      color: #fe191b;
+      font-family: "ClashGrotesk-SemiBold";
+    }
+  }
+}
+
+.bi-small-heading {
+  font-family: "ClashGrotesk-Bold";
+  @include responsive-font(
+    map-get($heading-fonts-sizes-desktop, "Small"),
+    map-get($heading-fonts-sizes-desktop, "Small-line"),
+    map-get($breakpoints, "desktop")
+  );
+  color: map-get($text, "text-primary");
+  @include mq("tablet", max) {
+    @include responsive-font(
+      map-get($heading-fonts-sizes-mobile, "Small"),
+      map-get($heading-fonts-sizes-mobile, "Small-line"),
       map-get($breakpoints, "phone-small")
     );
   }
@@ -73,10 +102,6 @@ p,
 
 .bi-bolded {
   font-family: "ClashGrotesk-SemiBold";
-  &::after{
-    content: ".";
-    color: #FE191B;
-  }
 }
 
 button,
