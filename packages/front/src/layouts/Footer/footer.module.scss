@@ -1,5 +1,5 @@
 .footer {
-  background-color: #131e14;
+  background-color: #1e1e1e;
   height: auto;
   padding-top: 40px;
   padding-bottom: 24px;
@@ -166,6 +166,92 @@
     }
     p {
       color: #727373;
+    }
+  }
+  @include mq("tablet", max) {
+    @include grid(
+      map-get($layout-mobile, column-number),
+      map-get($layout-mobile, column-spacing),
+      map-get($layout-mobile, margin)
+    );
+    &_header {
+      grid-column: 1 / 9;
+      padding: 32px 0px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 32px;
+      padding-left: 16px;
+      padding-right: 16px;
+      gap: 32px;
+      &_right {
+        & > div {
+          display: flex;
+          gap: 8px;
+          margin-bottom: 8px;
+          input {
+            padding-left: 24px;
+            grid-column: 1 / 5;
+            border: none;
+            border-radius: 8px;
+            height: 32px;
+          }
+          button {
+            transition: 300ms ease-in-out;
+            border-radius: 8px;
+            padding: 0px 8px;
+            p {
+              color: white;
+              transition: 300ms ease-in-out;
+              font-size: 12px;
+            }
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    &_mid {
+      grid-column: 1 / 9;
+      display: grid;
+      grid-template-columns: subgrid;
+      margin-bottom: 40px;
+      a {
+        grid-column: 1 / 9;
+      }
+      nav {
+        margin-top: 16px;
+        grid-column: 1 / 9;
+        display: flex;
+        flex-direction: column;
+        ul {
+          margin-bottom: 24px;
+        }
+      }
+      & > div {
+        text-align: start;
+        grid-column: 1 / 9;
+        ul {
+          display: flex;
+          justify-content: start;
+          gap: 4px;
+        }
+      }
+    }
+    &_bottom {
+      grid-column: 1 / 9;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      & > div {
+        display: flex;
+        flex-direction: column;
+
+        gap: 8px;
+      }
+      p {
+        color: #727373;
+      }
     }
   }
 }
