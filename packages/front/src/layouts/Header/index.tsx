@@ -61,7 +61,10 @@ const index = (props: { url: string }) => {
           <ul>
             {path.map((el, index) => {
               return (
-                <li key={el.name} className={`${el.path === url ? Style.active : ""}`}>
+                <li
+                  key={el.name}
+                  className={`${el.path === url ? Style.active : ""}`}
+                >
                   <a href={el.path}>
                     <p>{el.name}</p>
                   </a>
@@ -74,11 +77,11 @@ const index = (props: { url: string }) => {
           Contact
         </Button>
       </header>
-      {/* <header
+      <header
         className={`${Style.header__mobile} ${isOpen ? Style.open : Style.close}`}
       >
         <a href="/">
-          <Logo type="classic" />
+          <Logo type="invert" />
         </a>
         <button
           className={`${isOpen ? Style.open : ""}`}
@@ -90,50 +93,22 @@ const index = (props: { url: string }) => {
         <div id={Style.menu}>
           <nav>
             <ul>
-              <li>
-                <a className="bi-large-heading" href="/">
-                  Accueil
-                </a>
-              </li>
-              <li>
-                <a className="bi-large-heading" href="/restaurant">
-                  Restaurant
-                </a>
-              </li>
-              <li>
-                <a className="bi-large-heading" href="/carte">
-                  Carte
-                </a>
-              </li>
-              <li>
-                <a className="bi-large-heading" href="/contact">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a
-                  className="bi-large-heading"
-                  onClick={() => {
-                    setIsOpen(false);
-                    eventBus.dispatch("modal:open");
-                  }}
-                >
-                  Réservation
-                </a>
-              </li>
-              <li>
-                <a
-                  className="bi-large-heading"
-                  target="_blank"
-                  href="https://guide.michelin.com/fr/fr/auvergne-rhone-alpes/lyon/restaurant/aromatic"
-                >
-                  <Icons type="michelin" />
-                </a>
-              </li>
+              {path.map((el, index) => {
+                return (
+                  <li
+                    key={el.name}
+                    className={`${el.path === url ? Style.active : ""}`}
+                  >
+                    <a href={el.path}>
+                      <p>{el.name}</p>
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
         </div>
-      </header> */}
+      </header>
     </>
   );
 };

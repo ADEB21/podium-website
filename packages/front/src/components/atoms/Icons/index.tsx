@@ -1,6 +1,8 @@
 import React from "react";
 
-const index = (props: { type: "facebook" | "linkedin" | "x" | "behance" }) => {
+const index = (props: {
+  type: "facebook" | "linkedin" | "x" | "behance" | "burger";
+}) => {
   const { type } = props;
   switch (type) {
     case "facebook":
@@ -69,6 +71,20 @@ const index = (props: { type: "facebook" | "linkedin" | "x" | "behance" }) => {
             d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24ZM16.34 7L12.8975 11.2665L17 17H13.655L11.1245 13.465L8.272 17H6.735L10.403 12.455L6.5 7H9.845L12.176 10.2585L14.8035 7H16.34ZM10.985 11.732L11.7075 12.7415L14.1745 16.1865H15.3295L12.3205 11.982L11.599 10.972L9.335 7.8135H8.18L10.985 11.732Z"
             fill="#434445"
           />
+        </svg>
+      );
+    case "burger":
+      return (
+        <svg
+          width="18"
+          height="14"
+          viewBox="0 0 18 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0 1H18" stroke="black" stroke-width="2" />
+          <path d="M0 7H18" stroke="black" stroke-width="2" />
+          <path d="M0 13H18" stroke="black" stroke-width="2" />
         </svg>
       );
   }

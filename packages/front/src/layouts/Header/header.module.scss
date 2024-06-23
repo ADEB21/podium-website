@@ -76,27 +76,23 @@
   top: 0;
   left: 0;
   right: 0;
-  padding: 16px 0px;
+  padding: 16px 16px;
   z-index: 100;
-  background-color: map-get($surface, "surface-invert-tertiary");
-  @include grid(
-    map-get($layout-mobile, column-number),
-    map-get($layout-mobile, column-spacing),
-    map-get($layout-mobile, margin)
-  );
+  background-color: #fcfbfb;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   a {
-    grid-column: 1 / 4;
     width: 100px;
-    height: 30px;
+    height: auto;
+    line-height: 0;
     svg {
       width: 100%;
       height: auto;
     }
   }
   button {
-    grid-column: 9 / 9;
-    height: 30px;
+    height: auto;
     display: flex;
     align-items: center;
     svg {
@@ -130,10 +126,10 @@
   }
   &.open {
     transition: background-color 300ms ease-in-out;
-    background-color: map-get($surface, "surface-primary");
+    background-color: #1e1e1e;
     a {
       svg {
-        path {
+        path:not(:nth-last-child(1)) {
           fill: map-get($surface, "surface-invert-primary");
         }
       }
@@ -142,10 +138,8 @@
       svg {
         path {
           transform-origin: center;
-          transition:
-            transform 300ms ease-in-out,
-            opacity 300ms ease-in;
-          fill: map-get($surface, "surface-invert-primary");
+          transition: transform 300ms ease-in-out, opacity 300ms ease-in;
+          stroke: white;
         }
         path:nth-of-type(1) {
           transform: rotate(45deg) translateY(5px);
@@ -155,7 +149,7 @@
           opacity: 0;
         }
         path:nth-of-type(3) {
-          transform: rotate(-45deg) translateY(-5px);
+          transform: rotate(-45deg) translateY(-6px);
         }
       }
     }
@@ -164,11 +158,11 @@
       display: block;
       opacity: 1;
       position: fixed;
-      top: 62px;
+      top: 51.05px;
       left: 0;
       right: 0;
       bottom: 100%;
-      background-color: map-get($surface, "surface-primary");
+      background-color: #1e1e1e;
       z-index: 100;
       animation: menuOpen 600ms 100ms ease-in-out forwards;
       overflow: hidden;
@@ -177,7 +171,7 @@
         ul {
           display: flex;
           flex-direction: column;
-          gap: 8px;
+          gap: 12px;
           padding-left: 16px;
           padding-top: 40px;
           li {
@@ -189,7 +183,12 @@
               }
             }
             a {
-              color: map-get($text, "text-invert");
+              color: white;
+              p {
+                color: white;
+                font-size: 2rem;
+                line-height: 2rem;
+              }
             }
           }
           @for $i from 1 through 6 {
