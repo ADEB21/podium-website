@@ -51,6 +51,7 @@ const index = (props: { url: string }) => {
     };
   }, [prevScrollPos]);
 
+
   return (
     <>
       <header className={`${Style.header} ${visible ? "" : Style.hidden}`}>
@@ -86,7 +87,17 @@ const index = (props: { url: string }) => {
         <button
           className={`${isOpen ? Style.open : ""}`}
           aria-label="Ouvrir"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => {
+            setIsOpen(!isOpen)
+            setIsOpen((value) => {
+              if (value) {
+                (window as any).lenis.stop()
+              }else{
+                (window as any).lenis.start()
+              }
+              return value
+            })
+          }}
         >
           <Icons type="burger" />
         </button>
