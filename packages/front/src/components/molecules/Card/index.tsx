@@ -16,10 +16,10 @@ const index = (props: {
       <span className="bi-small-body">{tag}</span>
       <Picture
         alt={"converture du projet"}
-        widthDesktop={440}
-        heightDesktop={309}
-        widthMobile={320}
-        heightMobile={240}
+        widthDesktop={880}
+        heightDesktop={618}
+        widthMobile={640}
+        heightMobile={480}
         sanityImage={picture}
         isLazy={false}
         isParallax={true}
