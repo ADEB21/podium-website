@@ -2,12 +2,18 @@ import Picture from "@/components/atoms/Picture";
 import React from "react";
 import Style from "./style.module.scss";
 
-const index = (props: { title: string; summary: string; picture: any }) => {
-  const { title, summary, picture } = props;
-  console.log(title, summary);
+const index = (props: {
+  title: string;
+  summary: string;
+  picture: any;
+  tag: string;
+}) => {
+  const { title, summary, picture, tag } = props;
+  console.log(title, summary, tag);
 
   return (
     <article className={Style.card}>
+      <span className="bi-small-body">{tag}</span>
       <Picture
         alt={"converture du projet"}
         widthDesktop={440}
