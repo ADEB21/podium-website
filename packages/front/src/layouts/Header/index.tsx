@@ -13,10 +13,6 @@ const index = (props: { url: string }) => {
       path: "/",
     },
     {
-      name: "Agence",
-      path: "/agence",
-    },
-    {
       name: "Projets",
       path: "/projets",
     },
@@ -74,7 +70,7 @@ const index = (props: { url: string }) => {
             })}
           </ul>
         </nav>
-        <Button target="_blank" type="stroke">
+        <Button link="mailto:contact@podium.com" target="_blank" type="stroke">
           Contact
         </Button>
       </header>

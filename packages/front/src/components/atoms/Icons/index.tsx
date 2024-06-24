@@ -82,9 +82,9 @@ const index = (props: {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M0 1H18" stroke="black" stroke-width="2" />
-          <path d="M0 7H18" stroke="black" stroke-width="2" />
-          <path d="M0 13H18" stroke="black" stroke-width="2" />
+          <path d="M0 1H18" stroke="black" strokeWidth="2" />
+          <path d="M0 7H18" stroke="black" strokeWidth="2" />
+          <path d="M0 13H18" stroke="black" strokeWidth="2" />
         </svg>
       );
   }
