@@ -14,6 +14,8 @@ import HeroMobileRetinaWebp from "@/assets/images/services/hero/mobile-retina.we
 import HeroDesktopLazy from "@/assets/images/services/hero/desktop-lazy.jpg";
 import HeroMobileLazy from "@/assets/images/services/hero/mobile-lazy.jpg";
 import Hero from "@/components/organisms/Hero";
+import CreationsGrid from "@/components/organisms/CreationsGrid";
+import Icons from "@/components/atoms/Icons";
 
 const heroImage = {
   desktop: {
@@ -29,6 +31,21 @@ const heroImage = {
     mobile: HeroMobileLazy.src,
   },
 };
+
+const data = await client.fetch(
+  `*[_type == "home" && !(_id in path("drafts.**"))][0]{
+    ProjectsArray[]->
+  }`
+);
+
+const cards = [
+  { title: "Campagnes publicitaires", icon: "pourcentage" },
+  { title: "Marketing de Contenu", icon: "content" },
+  { title: "gestion des relations médias ", icon: "relation" },
+  { title: "Maquettes digitales", icon: "maquette" },
+  { title: "Évènements médiatiques", icon: "cube" },
+  { title: "Campagnes publicitaires", icon: "auth" },
+];
 ---
 
 <SEO
@@ -44,8 +61,192 @@ const heroImage = {
       images={heroImage}
       client:load
     />
+    <section class="bi-elevate">
+      <div>
+        <h3><span class="bi-bolded">Élever</span> votre communication</h3>
+        <p>
+          Vous avez beaucoup à nous apprendre sur votre marché et votre offre.
+          Des infos précieuses qui méritent toute notre attention : parce qu’une
+          solution digitale, ça se construit ensemble. C’est pour cela qu’un
+          projet ne démarre jamais sans un vrai kick-off et que nous avons
+          développés des méthodologies de co-construction. Vous impliquer dans
+          chaque étape du projet, c’est vous en donner une maîtrise.
+        </p>
+      </div>
+    </section>
+
+    <section class="services">
+      <h3>
+        Des <span class="bi-bolded">services</span> uniques <br /> pour atteindre
+        des <span class="bi-bolded">sommets</span>
+      </h3>
+
+      <ul>
+        {
+          cards &&
+            cards.map((card) => {
+              return (
+                <li class="card">
+                  <div>
+                    <Icons type={card.icon} />
+                    <p>{card.title}</p>
+                  </div>
+                </li>
+              );
+            })
+        }
+      </ul>
+    </section>
+
+    <CreationsGrid title data={data} client:load />
   </Layout>
 </SEO>
+
+<style lang="scss">
+  .bi-elevate {
+    background-color: #fcfbfb;
+    h3,
+    p {
+      color: #1e1e1e;
+      text-align: center;
+    }
+    h3 {
+      margin-bottom: 40px;
+      color: #1e1e1e;
+    }
+    p {
+      margin-bottom: 32px;
+    }
+    & > div {
+      display: flex;
+      flex-direction: column;
+      padding: 92px 0px;
+      max-width: 800px;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+    }
+    @include mq("tablet", max) {
+      h3 {
+        margin-bottom: 24px;
+      }
+      p {
+        margin-bottom: 16px;
+      }
+      & > div {
+        padding: 40px 16px;
+      }
+    }
+  }
+
+  .services {
+    background-color: #1e1e1e;
+    @include grid(
+      map-get($layout-desktop, column-number),
+      map-get($layout-desktop, column-spacing),
+      map-get($layout-desktop, margin)
+    );
+    padding-bottom: 92px;
+    h3 {
+      grid-column: 1 / 13;
+      text-align: center;
+      color: white;
+      padding: 92px 0px;
+    }
+    ul {
+      grid-column: 2 / 12;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      row-gap: 32px;
+      justify-content: center;
+      li {
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid #434445;
+        position: relative;
+        flex: 0 0 325px;
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(
+            325deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(9, 85, 11, 1) 100%
+          );
+          opacity: 0.1;
+        }
+        &.card {
+          width: 325px;
+          height: 246px;
+          & > div {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-left: 24px;
+            padding-bottom: 32px;
+            justify-content: end;
+            gap: 12px;
+            p {
+              font-size: 32px;
+              line-height: 32px;
+              text-transform: uppercase;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    @include mq("tablet", max) {
+      @include grid(
+        map-get($layout-mobile, column-number),
+        map-get($layout-mobile, column-spacing),
+        map-get($layout-mobile, margin)
+      );
+      padding-bottom: 40px;
+      h3 {
+        grid-column: 1 / 9;
+        padding: 40px 0px;
+      }
+      ul {
+      grid-column: 1 / 9;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      row-gap: 16px;
+      li {
+        flex: 0 0 100%;
+        &.card {
+          width: 100%;
+          height: 246px;
+          & > div {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-left: 24px;
+            padding-bottom: 32px;
+            justify-content: end;
+            gap: 12px;
+            p {
+              font-size: 32px;
+              line-height: 32px;
+              text-transform: uppercase;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    }
+  }
+</style>
 
 <!-- <script define:vars={{ data }}>
   console.log(data);

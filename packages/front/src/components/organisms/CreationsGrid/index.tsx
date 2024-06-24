@@ -3,16 +3,25 @@ import Style from "./style.module.scss";
 import Button from "@/components/atoms/Button";
 import Card from "@/components/molecules/Card";
 
-const index = (props: { data: any }) => {
-  const { data } = props;
+const index = (props: { data: any; projects?: boolean; title: boolean }) => {
+  const { data, projects, title } = props;
 
   return (
-    <section className={Style.creationsGrid}>
-      <h3 className="question">
-        Une envie de <br />
-        <span className="bi-bolded">travailler</span> avec nous{" "}
-      </h3>
-
+    <section
+      className={`${Style.creationsGrid} ${projects ? Style.projects : ""}`}
+    >
+      {title && (
+        <h3 className="question">
+          Quelques <br />
+          <span className="bi-bolded">médailles d’or</span>
+        </h3>
+      )}
+      {!projects && !title && (
+        <h3 className="question">
+          Une envie de <br />
+          <span className="bi-bolded">travailler</span> avec nous{" "}
+        </h3>
+      )}
       <ul>
         {data &&
           data.ProjectsArray.map(
@@ -22,7 +31,7 @@ const index = (props: { data: any }) => {
                 summary: string;
                 title: string;
                 _id: string;
-                type: string,
+                type: string;
               },
               index: number
             ) => {
@@ -39,7 +48,11 @@ const index = (props: { data: any }) => {
             }
           )}
       </ul>
-      <Button link="/projets" type="filled">Voir plus </Button>
+      {!projects && (
+        <Button link="/projets" type="filled">
+          Voir plus{" "}
+        </Button>
+      )}
     </section>
   );
 };

@@ -14,6 +14,7 @@ import HeroMobileRetinaWebp from "@/assets/images/projets/hero/mobile-retina.web
 import HeroDesktopLazy from "@/assets/images/projets/hero/desktop-lazy.jpg";
 import HeroMobileLazy from "@/assets/images/projets/hero/mobile-lazy.jpg";
 import Hero from "@/components/organisms/Hero";
+import CreationsGrid from "@/components/organisms/CreationsGrid";
 
 const heroImage = {
   desktop: {
@@ -30,6 +31,12 @@ const heroImage = {
   },
 };
 
+const data = await client.fetch(
+  `*[_type == "projects" && !(_id in path("drafts.**"))][0]{
+    ProjectsArray[]->
+  }`
+);
+
 ---
 
 <SEO
@@ -45,9 +52,10 @@ const heroImage = {
       images={heroImage}
       client:load
     />
+    <CreationsGrid projects data={data} client:load />
   </Layout>
 </SEO>
 
-<!-- <script define:vars={{ data }}>
+<script define:vars={{ data }}>
   console.log(data);
-</script> -->
+</script>

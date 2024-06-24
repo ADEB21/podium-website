@@ -10,5 +10,17 @@ export default defineType({
       title: 'Hero',
       type: 'hero',
     }),
+    defineField({
+      name: 'ProjectsArray',
+      title: 'Projets séléctionnés',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'project'}],
+        },
+      ],
+      validation: (Rule) => [Rule.max(6).error("Doit contenir au maximum 6 projets")]
+    }),
   ],
 })

@@ -190,8 +190,8 @@ const team = [
 ];
 
 const data = await client.fetch(
-  `*[_type == "projects" && !(_id in path("drafts.**"))][0]{
-    ProjectsArray[0...6]->
+  `*[_type == "home" && !(_id in path("drafts.**"))][0]{
+    ProjectsArray[]->
   }`
 );
 ---
