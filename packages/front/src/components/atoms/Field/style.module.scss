@@ -1,0 +1,56 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  label.required {
+    p {
+      &::after {
+        content: "*";
+        color: red;
+      }
+    }
+  }
+  input {
+    font-family: "ClashGrotesk-Regular";
+  }
+}
+
+textarea {
+  resize: none;
+  border: none;
+  padding: 8px 12px;
+}
+
+input {
+  height: 48px;
+  border: none;
+  padding-left: 12px;
+  border-radius: 4px;
+}
+
+select {
+  height: 48px;
+  border: none;
+}
+
+input[type="submit"] {
+  padding: 12px 24px;
+  height: auto;
+  width: fit-content;
+  background-color: #fe191b;
+  width: 100%;
+  margin-top: 24px;
+  color: white;
+  transition: background-color 300ms ease-in-out;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}
+
+input[type="range"] {
+  -webkit-appearance: auto;
+  height: auto;
+  accent-color: #fe191b;
+}
