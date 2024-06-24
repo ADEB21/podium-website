@@ -11,7 +11,7 @@ const index = (props: { data: any; projects?: boolean; title: boolean }) => {
       className={`${Style.creationsGrid} ${projects ? Style.projects : ""}`}
     >
       {title && (
-        <h3 className="question">
+        <h3>
           Quelques <br />
           <span className="bi-bolded">médailles d’or</span>
         </h3>
