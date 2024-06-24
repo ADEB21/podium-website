@@ -22,6 +22,7 @@ const index = (props: { data: any }) => {
                 summary: string;
                 title: string;
                 _id: string;
+                type: string,
               },
               index: number
             ) => {
@@ -31,13 +32,14 @@ const index = (props: { data: any }) => {
                     title={project.title}
                     summary={project.summary}
                     picture={project.picture}
+                    tag={project.type}
                   />
                 </li>
               );
             }
           )}
       </ul>
-      <Button type="filled">Voir plus </Button>
+      <Button link="/projets" type="filled">Voir plus </Button>
     </section>
   );
 };
