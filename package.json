@@ -1,7 +1,7 @@
 {
-  "name": "aromatic-restaurant",
+  "name": "podium",
   "version": "2.0.0",
-  "description": "MonoRepo of the Aromatic Restaurant",
+  "description": "MonoRepo of the Podium Agency",
   "main": "index.js",
   "workspaces": [
     "packages/front",
