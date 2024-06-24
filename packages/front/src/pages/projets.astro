@@ -3,9 +3,33 @@ import { client } from "@/assets/scripts/utils/api/sanityClient";
 import SEO from "@/layouts/utils/SEO.astro";
 import Layout from "../layouts/Layout.astro";
 
-// const data = await client.fetch(
-//   `*[_type == "home" && !(_id in path("drafts.**"))][0]`
-// );
+import HeroDesktopBase from "@/assets/images/projets/hero/desktop-base.jpg";
+import HeroDesktopBaseWebp from "@/assets/images/projets/hero/desktop-base.webp";
+import HeroDesktopRetina from "@/assets/images/projets/hero/desktop-retina.jpg";
+import HeroDesktopRetinaWebp from "@/assets/images/projets/hero/desktop-retina.webp";
+import HeroMobileBase from "@/assets/images/projets/hero/mobile-base.jpg";
+import HeroMobileBaseWebp from "@/assets/images/projets/hero/mobile-base.webp";
+import HeroMobileRetina from "@/assets/images/projets/hero/mobile-retina.jpg";
+import HeroMobileRetinaWebp from "@/assets/images/projets/hero/mobile-retina.webp";
+import HeroDesktopLazy from "@/assets/images/projets/hero/desktop-lazy.jpg";
+import HeroMobileLazy from "@/assets/images/projets/hero/mobile-lazy.jpg";
+import Hero from "@/components/organisms/Hero";
+
+const heroImage = {
+  desktop: {
+    jpeg: [HeroDesktopBase.src, HeroDesktopRetina.src],
+    webp: [HeroDesktopBaseWebp.src, HeroDesktopRetinaWebp.src],
+  },
+  mobile: {
+    jpeg: [HeroMobileBase.src, HeroMobileRetina.src],
+    webp: [HeroMobileBaseWebp.src, HeroMobileRetinaWebp.src],
+  },
+  lazy: {
+    desktop: HeroDesktopLazy.src,
+    mobile: HeroMobileLazy.src,
+  },
+};
+
 ---
 
 <SEO
@@ -15,8 +39,12 @@ import Layout from "../layouts/Layout.astro";
   ogImage={null}
 >
   <Layout>
-    <>
-    </>
+    <Hero
+      title="Tous nos projets"
+      type="index"
+      images={heroImage}
+      client:load
+    />
   </Layout>
 </SEO>
 
