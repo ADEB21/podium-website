@@ -18,6 +18,15 @@ export function linkify(link) {
     .toLowerCase()}`;
 }
 
+export function stringifyFormat(link) {
+  return `${link
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .split(" ")
+    .join("-")
+    .toLowerCase()}`;
+}
+
 export function lerp(start, end, t) {
   return start * (1 - t) + end * t;
 }
