@@ -30,6 +30,13 @@ html {
   background-color: #FCFBFB;
 }
 
+// Swup 
+
+.swup-transition-overlay {
+  background-image: url("../../images/motif.svg");
+  --swup-overlay-theme-skew: 0deg;
+}
+
 // Typography settings
 
 h1,

@@ -4,6 +4,7 @@ import Style from "./header.module.scss";
 import { useEffect, useState } from "react";
 import eventBus from "@/assets/scripts/utils/eventBus";
 import Button from "@/components/atoms/Button";
+import useIsMobile from "@/assets/scripts/hooks/useIsMobile";
 
 const index = (props: { url: string }) => {
   const { url } = props;
@@ -26,7 +27,7 @@ const index = (props: { url: string }) => {
     },
   ];
 
-  const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -46,6 +47,14 @@ const index = (props: { url: string }) => {
       document.removeEventListener("scroll", handleScroll);
     };
   }, [prevScrollPos]);
+
+  useEffect(() => {
+    if ((window as any).swup) {
+      (window as any).swup.hooks.on("animation:in:end", () => {
+        (window as any).lenis.start()
+      });
+    }
+  }, [])
 
 
   return (
@@ -74,7 +83,7 @@ const index = (props: { url: string }) => {
           Contact
         </Button>
       </header>
-      <header
+<header
         className={`${Style.header__mobile} ${isOpen ? Style.open : Style.close}`}
       >
         <a href="/">
@@ -85,7 +94,7 @@ const index = (props: { url: string }) => {
           aria-label="Ouvrir"
           onClick={() => {
             setIsOpen(!isOpen)
-            setIsOpen((value) => {
+            setIsOpen((value: any) => {
               if (value) {
                 (window as any).lenis.stop()
               }else{

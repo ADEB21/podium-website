@@ -1,6 +1,6 @@
 import Picture from "@/components/atoms/Picture";
 import { useEffect, useRef } from "react";
-import Style from "./style.module.scss";
+import Style from "./style.module.scss"
 
 const IndexHero = (props: {
   images?: Picture;
@@ -9,6 +9,7 @@ const IndexHero = (props: {
 }) => {
   const { images, title } = props;
   const sectionRef = useRef<HTMLElement>(null);
+
 
   return (
     <section ref={sectionRef} className={Style.heroIndex}>
@@ -23,7 +24,7 @@ const IndexHero = (props: {
           isLazy={false}
           isParallax={true}
         />
-        <h1>{title}</h1>
+        <h1 className="splt">{title}</h1>
       </div>
     </section>
   );

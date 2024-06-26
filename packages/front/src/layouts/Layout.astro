@@ -4,14 +4,79 @@ import "@/assets/styles/utils/_reset.scss";
 import "@/assets/styles/utils/_global.scss";
 import Header from "@/layouts/Header";
 import Footer from "@/layouts/Footer";
+import Loader from "./Loader";
 const { isHeader = true, isFooter = true } = Astro.props;
 ---
 
 <body>
   <SmoothScroll client:load />
-  {isHeader && <Header url={Astro.url.pathname} client:only />}
+  <div class="loader">
+    <svg
+      width="292"
+      height="331"
+      viewBox="0 0 292 331"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M196.621 263.11V0L126.802 23.0014V126.805C126.802 130.129 126.58 133.371 126.095 136.552V136.757C123.993 151.448 117.302 164.58 107.599 174.593C104.123 178.163 100.282 181.323 96.138 184.032C94.6826 184.996 93.1666 185.899 91.6101 186.72V330.678H131.088C149.179 330.678 165.553 323.107 177.418 310.878C188.697 299.244 195.914 283.362 196.561 265.778C196.621 264.896 196.621 264.013 196.621 263.11ZM91.6094 330.678V186.719V186.699L91.5494 186.731V330.677H87.5066V188.733C80.9049 191.72 73.7489 193.612 66.2207 194.188C64.5834 194.332 62.9259 194.393 61.2683 194.393H0V330.678H91.6094ZM291.181 198.231C291.181 211.342 287.562 223.592 281.276 233.933C278.628 238.304 275.495 242.346 271.977 245.998C260.112 258.227 243.739 265.778 225.667 265.799H200.664V82.1447L291.16 52.3432V198.21L291.181 198.231ZM74.6702 91.0613V39.8262L2.67029e-05 63.7099V130.888H36.0818C37.0521 130.888 38.0224 130.847 38.9926 130.765C44.3493 130.354 49.4028 128.795 53.9307 126.353C54.8403 125.861 55.7297 125.327 56.5989 124.773C59.0448 123.173 61.3088 121.306 63.3504 119.213C69.0709 113.324 73.0126 105.568 74.2659 96.9296V96.8065C74.5287 94.9188 74.6702 93.0105 74.6702 91.0613Z"
+        fill="white"></path>
+    </svg>
+  </div>
   <main>
+    {isHeader && <Header url={Astro.url.pathname} client:load />}
     <slot />
+    {isFooter && <Footer client:load />}
   </main>
-  {isFooter && <Footer client:load />}
 </body>
+
+<script>
+  window.addEventListener("load", () => {
+    const loader = document.querySelector(".loader")
+    console.log(loader);
+    setTimeout(() => {
+      loader?.classList.add("hide")
+    }, 3000)
+  });
+</script>
+
+<style lang="scss">
+  .loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #09550b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    svg {
+      width: 10%;
+      height: fit-content;
+      transition: opacity 300ms ease-in-out;
+      animation: fade 1s ease-in infinite reverse;
+    }
+    &.hide {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      pointer-events: none;
+    }
+  }
+
+  @keyframes fade {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
