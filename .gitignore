@@ -1,3 +1,4 @@
 node_modules/
 packages/front/node_modules
 packages/sanity/node_modules
+pnpm-lock.yaml
