@@ -1,6 +1,7 @@
 import Icons from "@/components/atoms/Icons";
 import Style from "./footer.module.scss";
 import Logo from "@/components/atoms/Logo";
+import GIF from "@/assets/images/logo_footer.gif";
 
 const index = () => {
   return (
@@ -46,7 +47,7 @@ const index = () => {
         </div>
         <div className={Style.footer_mid}>
           <a href="/">
-            <Logo type="classic" />
+            <img style={{ width: "100%" }} src={GIF.src} alt="" />
           </a>
           <nav>
             <ul>
@@ -103,19 +104,22 @@ const index = () => {
             </ul>
           </nav>
           <div>
-            <h5 className="bi-small-heading">Suiver-nous</h5>
+            <h5 className="bi-small-heading">Suivez-nous</h5>
             <ul>
               <li>
+                <Icons type="instagram" />
+              </li>
+              <li>
                 <Icons type="facebook" />
+              </li>
+              <li>
+                <Icons type="x" />
               </li>
               <li>
                 <Icons type="linkedin" />
               </li>
               <li>
                 <Icons type="behance" />
-              </li>
-              <li>
-                <Icons type="x" />
               </li>
             </ul>
           </div>

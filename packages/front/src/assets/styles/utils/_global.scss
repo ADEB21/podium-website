@@ -63,6 +63,22 @@ h4,
     color: #fe191b;
     font-family: "ClashGrotesk-SemiBold";
   }
+
+  &.yellowPoint{
+    &::after {
+      content: ".";
+      color: #FCE01E;
+      font-family: "ClashGrotesk-SemiBold";
+    }
+  }
+
+  &.greenPoint{
+    &::after {
+      content: ".";
+      color: #09550B;
+      font-family: "ClashGrotesk-SemiBold";
+    }
+  }
   &.question{
     &::after {
       content: "?";

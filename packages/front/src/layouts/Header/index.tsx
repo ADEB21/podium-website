@@ -80,7 +80,7 @@ const index = (props: { url: string }) => {
           </ul>
         </nav>
         <Button link="mailto:contact@podium.com" target="_blank" type="stroke">
-          Contact
+          Écrivez-nous
         </Button>
       </header>
 <header
