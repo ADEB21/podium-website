@@ -5,11 +5,11 @@ export default defineType({
   title: 'Accueil',
   type: 'document',
   fields: [
-    defineField({
-      name: 'hero',
-      title: 'Hero',
-      type: 'hero',
-    }),
+    // defineField({
+    //   name: 'hero',
+    //   title: 'Hero',
+    //   type: 'hero',
+    // }),
     defineField({
       name: 'ProjectsArray',
       title: 'Projets séléctionnés',

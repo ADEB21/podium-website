@@ -22,6 +22,11 @@
       bottom: 64px;
       grid-column: 2/8;
       color: white;
+      & > span {
+        & > span {
+          transform: translateY(100%);
+        }
+      }
     }
   }
   @include mq("tablet", max) {

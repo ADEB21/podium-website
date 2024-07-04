@@ -39,7 +39,7 @@ export default defineConfig({
               )
               .icon(HomeIcon),
             S.divider(),
-            S.documentTypeListItem('project').title('Projets').icon(PackageIcon),
+            S.documentTypeListItem('project').title('Liste des projets').icon(PackageIcon),
           ])
       },
     }

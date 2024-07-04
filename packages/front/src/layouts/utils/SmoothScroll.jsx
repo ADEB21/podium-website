@@ -1,8 +1,10 @@
 import React from "react";
 import Lenis from "lenis";
 import eventBus from '@/assets/scripts/utils/eventBus.js';
+
 const SmoothScroll = (props) => {
   const { wrapper } = props;
+
   React.useEffect(() => {
    
     const l = new Lenis({
@@ -24,14 +26,9 @@ const SmoothScroll = (props) => {
     requestAnimationFrame(raf);
 
     if(!wrapper){
-      
-
-   
 
     window.lenis = l;
     } 
-
-
     if(wrapper && l){
      // console.log("Wrapper init", wrapper);
       l.on('scroll', ()=>{
