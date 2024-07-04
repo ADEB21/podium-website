@@ -32,7 +32,8 @@
           padding-left: 24px;
           grid-column: 1 / 5;
           border: none;
-          border-radius: 8px;
+          height: auto;
+          border-radius: 8px
         }
         button {
           transition: 300ms ease-in-out;
