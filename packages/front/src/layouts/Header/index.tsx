@@ -52,6 +52,7 @@ const index = (props: { url: string }) => {
     if ((window as any).swup) {
       (window as any).swup.hooks.on("animation:in:end", () => {
         (window as any).lenis.start()
+        eventBus.dispatch("startSpltjs")
       });
     }
   }, [])

@@ -4,7 +4,8 @@ import "@/assets/styles/utils/_reset.scss";
 import "@/assets/styles/utils/_global.scss";
 import Header from "@/layouts/Header";
 import Footer from "@/layouts/Footer";
-import Loader from "./Loader";
+import Splitter from "@/layouts/Splitter";
+
 const { isHeader = true, isFooter = true } = Astro.props;
 ---
 
@@ -26,6 +27,7 @@ const { isHeader = true, isFooter = true } = Astro.props;
     </svg>
   </div>
   <main>
+    <Splitter client:load />
     {isHeader && <Header url={Astro.url.pathname} client:load />}
     <slot />
     {isFooter && <Footer client:load />}
@@ -33,12 +35,15 @@ const { isHeader = true, isFooter = true } = Astro.props;
 </body>
 
 <script>
+  import eventBus from "@/assets/scripts/utils/eventBus";
+
   window.addEventListener("load", () => {
-    const loader = document.querySelector(".loader")
+    const loader = document.querySelector(".loader");
     console.log(loader);
     setTimeout(() => {
-      loader?.classList.add("hide")
-    }, 3000)
+      loader?.classList.add("hide");
+      eventBus.dispatch("startSpltjs");
+    }, 3000);
   });
 </script>
 
