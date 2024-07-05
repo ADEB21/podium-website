@@ -9,8 +9,6 @@ const index = (props: {
   tag: string;
 }) => {
   const { title, summary, picture, tag } = props;
-  console.log(title, summary, tag);
-
   return (
     <article className={Style.card}>
       <span className="bi-small-body">{tag}</span>

@@ -5,8 +5,6 @@ import eventBus from "@/assets/scripts/utils/eventBus";
 
 const index = () => {
   React.useEffect(() => {
-    console.log("Splitter activate", splt);
-    console.log("GSAP activate", gsap);
 
     splt({
       reveal: true,
@@ -17,13 +15,11 @@ const index = () => {
         ".reveal",
         {
           y: "100%",
-          ease: "cubicBezier(.71,-0.77,.43,1.67)",
         },
         {
           y: "0%",
           stagger: {
-            each: 0.06,
-            ease: "cubicBezier(.71,-0.77,.43,1.67)",
+            amount: 0.5
           },
         }
       );
