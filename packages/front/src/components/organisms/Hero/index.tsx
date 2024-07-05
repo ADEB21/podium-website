@@ -1,15 +1,15 @@
 import Picture from "@/components/atoms/Picture";
 import { useEffect, useRef } from "react";
-import Style from "./style.module.scss"
+import Style from "./style.module.scss";
 
-const IndexHero = (props: {
+const index = (props: {
   images?: Picture;
-  title?: string;
+  title?: any;
   summary?: string;
+  children?: any;
 }) => {
-  const { images, title } = props;
+  const { images, summary, title, children } = props;
   const sectionRef = useRef<HTMLElement>(null);
-
 
   return (
     <section ref={sectionRef} className={Style.heroIndex}>
@@ -24,25 +24,12 @@ const IndexHero = (props: {
           isLazy={false}
           isParallax={true}
         />
-        <h1 className="splt">{title}</h1>
+        <h1>{title.split("|").map((el: string) => {
+          return <span className={`splt ${Style.split}`}>{el}</span>
+        })}</h1>
       </div>
     </section>
   );
-};
-
-const index = (props: {
-  type: string;
-  images?: Picture;
-  title?: string;
-  summary?: string;
-}) => {
-  const { type, images, summary, title } = props;
-  switch (type) {
-    case "index":
-      return <IndexHero title={title} summary={summary} images={images} />;
-    case "secondary":
-      return;
-  }
 };
 
 export default index;

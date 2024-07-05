@@ -3,7 +3,7 @@ import Style from "./style.module.scss";
 import Button from "@/components/atoms/Button";
 import Card from "@/components/molecules/Card";
 
-const index = (props: { data: any; projects?: boolean; title: boolean }) => {
+const index = (props: { data: any; projects?: boolean; title?: boolean }) => {
   const { data, projects, title } = props;
 
   return (
@@ -50,7 +50,7 @@ const index = (props: { data: any; projects?: boolean; title: boolean }) => {
       </ul>
       {!projects && (
         <Button link="/projets" type="filled">
-          Voir plus{" "}
+          Voir plus
         </Button>
       )}
     </section>

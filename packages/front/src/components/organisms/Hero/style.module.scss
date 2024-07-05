@@ -22,9 +22,12 @@
       bottom: 64px;
       grid-column: 2/8;
       color: white;
-      & > span {
+      .split {
+        display: block;
         & > span {
-          transform: translateY(100%);
+          & > span {
+            transform: translateY(100%);
+          }
         }
       }
     }

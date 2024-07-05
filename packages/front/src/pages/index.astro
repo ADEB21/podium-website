@@ -203,12 +203,8 @@ const data = await client.fetch(
   ogImage={HeroDesktopBase.src}
 >
   <Layout>
-    <Hero
-      title="Vous aussi communiquez comme des champions"
-      type="index"
-      images={heroImage}
-      client:load
-    />
+    <Hero title="Vous aussi communiquez|comme des champions" images={heroImage} client:load/>
+
     <section class="bi-contentPicture">
       <div class="bi-contentPicture-txt">
         <h2>Découvrez notre <span class="bi-bolded">agence</span></h2>
@@ -238,7 +234,9 @@ const data = await client.fetch(
     </section>
     <section class="bi-elevate">
       <div>
-        <h3 class="yellowPoint"><span class="bi-bolded">Élever</span> votre communication</h3>
+        <h3 class="yellowPoint">
+          <span class="bi-bolded">Élever</span> votre communication
+        </h3>
         <p>
           Vous avez beaucoup à nous apprendre sur votre marché et votre offre.
           Des infos précieuses qui méritent toute notre attention : parce qu’une
@@ -266,7 +264,9 @@ const data = await client.fetch(
         />
       </div>
       <div class="bi-history-txt">
-        <h3 class="greenPoint">Une histoire <span class="bi-bolded">sportive</span></h3>
+        <h3 class="greenPoint">
+          Une histoire <span class="bi-bolded">sportive</span>
+        </h3>
         <p>
           Depuis notre création, nous nous consacrons à raconter les plus belles
           histoires sportives, en capturant la passion et l'essence même du
